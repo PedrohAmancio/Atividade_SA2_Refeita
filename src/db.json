@@ -1,0 +1,42 @@
+{
+  "usuarios": [
+    {
+      "id": "0",
+      "email": "pedro@gmail.com",
+      "nome": "Pedro",
+      "idade": 17,
+      "senha": "Nãotemsenha"
+    },
+    {
+      "id": "1",
+      "email": "Gregory@gmail.com",
+      "nome": "Gregory",
+      "idade": 1,
+      "senha": "IndepndenteIrmao"
+    },
+    {
+      "id": "7",
+      "email": "Cristiano@gmail.com",
+      "nome": "CristianoRonaldo",
+      "idade": 7,
+      "senha": "SouOmior "
+    }
+  ],
+  "logins": [
+    {
+      "id": "0",
+      "email": "pedro@gmail.com",
+     "senha": "Nãotemsenha"
+    },
+   {
+      "id": "1",
+      "email": "Gregory@gmail.com",
+      "senha": "IndepndenteIrmao"
+    },
+    {
+      "id": "7",
+      "email": "Cristiano@gmail.com",
+      "senha": "SouOmior "
+    }
+  ]
+}
