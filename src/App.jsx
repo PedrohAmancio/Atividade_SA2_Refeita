@@ -1,14 +1,14 @@
 import { useState } from 'react'
-// import NavBar from './Components/NavBar'
+import NavBar from './components/NavBar'
 import Home from './Pages/Home'
-// import { router } from '../Rotas';
-import DetalheDDS from "./pages/DetalheDDS";
-import DetalheEletric from "./pages/DetalheEletric";    
-import DetalhesMec from './pages/DetalhesMec';
+import { router } from '../MyRouter';
+import Mecanica from './Pages/Mecanica';
+import DDS from './Pages/DDS';
+import Eletrica from './Pages/Eletrica';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './Components/Login/Login';
-import Cadastro from './Components/Cadastro/Cadastro';
-import Historia from './pages/Historia';
+import Login from './components/Login/Login';
+import Cadastro from './components/Cadastro/Cadastro';
+import HistoriaSENAI from './Pages/HistoriaSenai';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,12 +19,12 @@ function App() {
         <BrowserRouter>
          <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/Desenvolvimento-de-sistemas' element={<DetalheDDS/>}/>
-          <Route path='/Eletronica-e-eletrotecnica' element={<DetalheEletric/>}/>
-          <Route path='/Mecanica' element={<DetalhesMec/>}/>
+          <Route path='/Mecanica' element={<Mecanica/>}/>
+          <Route path='/DDS' element={<DDS/>}/>
+          <Route path='/Eletrica' element={<Eletrica/>}/>
           <Route path='Login' element={<Login/>}/>
           <Route path='Cadastro' element={<Cadastro/>}/>
-          <Route path='Historia-do-SENAI' element={<Historia/>}/>
+          <Route path='Historia' element={<HistoriaSENAI/>}/>
           {/* Quando clicar no incone do usuário o formulário de login
           tem que aparecer na mesma página como um componenete */}
          </Routes>

@@ -1,5 +1,5 @@
-import NavBar from './NavBar'
-const Layout = ({children}) => { // pq sem isso o codigo quebra vei ????
+import NavBar from './components/NavBar.jsx';
+const Layout = ({children}) => {
   return (
     <>
         <NavBar/>
