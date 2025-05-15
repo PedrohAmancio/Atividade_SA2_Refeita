@@ -1,37 +1,38 @@
-import { useState } from 'react'
-import NavBar from './components/NavBar'
-import Home from './Pages/Home'
-import { router } from '../MyRouter';
+import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+
+import Home from './Pages/Home';
 import Mecanica from './Pages/Mecanica';
 import DDS from './Pages/DDS';
 import Eletrica from './Pages/Eletrica';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './components/Login/Login';
-import Cadastro from './components/Cadastro/Cadastro';
-import HistoriaSENAI from './Pages/HistoriaSenai';
+import HistoriaSENAI from './Pages/HistoriaSENAI';
+import Login from './Pages/Login';
+import Cadastro from './Pages/Cadastro';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [isLoginVisible, setLoginVisible] = useState(false);
+
+  const toggleLogin = () => {
+    setLoginVisible(prevState => !prevState);
+  };
 
   return (
     <>
       <div>
-        <BrowserRouter>
-         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/Mecanica' element={<Mecanica/>}/>
-          <Route path='/DDS' element={<DDS/>}/>
-          <Route path='/Eletrica' element={<Eletrica/>}/>
-          <Route path='Login' element={<Login/>}/>
-          <Route path='Cadastro' element={<Cadastro/>}/>
-          <Route path='Historia' element={<HistoriaSENAI/>}/>
-          {/* Quando clicar no incone do usuário o formulário de login
-          tem que aparecer na mesma página como um componenete */}
-         </Routes>
-        </BrowserRouter>
+        <button onClick={toggleLogin}>Ícone do Usuário</button>
+        {isLoginVisible && <Login onClose={toggleLogin} />}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Mecanica" element={<Mecanica />} />
+          <Route path="/DDS" element={<DDS />} />
+          <Route path="/Eletrica" element={<Eletrica />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Cadastro" element={<Cadastro />} />
+          <Route path="/Historia" element={<HistoriaSENAI />} />
+        </Routes>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

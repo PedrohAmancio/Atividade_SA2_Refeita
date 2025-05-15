@@ -1,5 +1,6 @@
-import NavBar from './components/NavBar.jsx';
-const Layout = ({children}) => {
+import NavBar from './NavBar';
+
+const Lay = ({children}) => {
   return (
     <>
         <NavBar/>
@@ -11,4 +12,4 @@ const Layout = ({children}) => {
   )
 }
 
-export default Layout
+export default Lay

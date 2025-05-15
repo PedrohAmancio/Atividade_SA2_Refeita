@@ -1,16 +1,14 @@
-import React from 'react'
-import Footer from '../components/Footer'
-import Layout from '../components/Layout'
-import styles from './style/HistoriaSENAI.module.css'
+import Footer from '../Components/Footer'
+import Layout from '../components/Lay'
+import styles from "./styles/Hist.module.css"
 
-// import styles from './style/HistoriaSENAI.css'
 
 const HistoriaSENAI = () => {
   return (
     <div>
       <Layout />
       <section>
-        <video src="/SENAIVIDEO.wmv" controls className={styles.video}>
+        <video src="https://www.youtube.com/embed/--Canqbimf0" controls className={styles.video}>
         </video>
       </section>
 

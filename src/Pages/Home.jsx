@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import Layout from '../components/Layout';
+import Layout from '../components/Lay';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
@@ -19,7 +19,6 @@ function ControlledCarousel() {
 
   const navigate = useNavigate();
 
-  // Eu tenho que clicar no matricular-se e ele tem que me levar para a página
 
   return (
     <Layout>
@@ -35,7 +34,7 @@ function ControlledCarousel() {
           overflow: 'hidden',
         }}
       >
-        <Carousel
+        <Carousel indicators={false} interval={2000} // confirmar dps 
           activeIndex={index}
           onSelect={handleSelect}
           style={{
@@ -43,43 +42,52 @@ function ControlledCarousel() {
             marginTop:'2vh',
           }}
         >
-          <Carousel.Item style={{ height: '100%' }}>
+          <Carousel.Item style={{ height: '80%' }}>
             <img
               className="d-block w-100"
               src="https://eadsenaies.com.br/wp-content/uploads/2021/10/banner_senai_ead_4.0_350x350-350x284.png"
               alt="Chegue rápido no mercado de trabalho"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+               style={{
+        width: '100px', // Define a largura da logo
+        height: 'auto', // Mantém a proporção da imagem
+        display: 'block', // Garante que a imagem seja tratada como um bloco
+        margin: '10 auto', // Centraliza a logo horizontalmente
+        cursor: 'pointer' // Adiciona um cursor de ponteiro ao passar o mouse
+    }}
             />
           </Carousel.Item>
-          <Carousel.Item style={{ height: '100%' }}>
+          <Carousel.Item style={{ height: '80%' }}>
             <img
               className="d-block w-100"
               src="https://www.tudorondonia.com/uploads/02-08-24-z3sl570y04o8ri8.jpg"
-              alt="Second slide"
-              style={{ 
-                width: '100%',
-                height: 'auto',
-              }}
+              alt="Imagem legal de mais da conta"
+                style={{
+        width: '80px', // Define a largura da logo
+        height: 'auto', // Mantém a proporção da imagem
+        display: 'block', // Garante que a imagem seja tratada como um bloco
+        margin: '0 auto', // Centraliza a logo horizontalmente
+        cursor: 'pointer' // Adiciona um cursor de ponteiro ao passar o mouse
+    }}
             />
           </Carousel.Item>
-          <Carousel.Item style={{ height: '100%' }}>
+          <Carousel.Item style={{ height: '80%' }}>
             <img
               className="d-block w-100"
               src="https://www.senaipr.org.br/mundosenai/uploadAddress/Senai-Mundo-Senai-2024-Banner-Desktop-768x630[110573].png"
-              alt="Third slide"
-              style={{ 
-                width: '100%',
-                height: 'auto',
-              }}
+              alt="Imagem para melhorar a outra imagem"
+                style={{
+        width: '80px', // Define a largura da logo
+        height: 'auto', // Mantém a proporção da imagem
+        display: 'block', // Garante que a imagem seja tratada como um bloco
+        margin: '0 auto', // Centraliza a logo horizontalmente
+        cursor: 'pointer' // Adiciona um cursor de ponteiro ao passar o mouse
+    }}
             />
           </Carousel.Item>
         </Carousel>
       </div>
 
-      <div
+      {/* <div
         style={{
           position: 'relative',
           display: 'flex',
@@ -89,12 +97,8 @@ function ControlledCarousel() {
           padding: '20px',
         }}
       >
-        {/* <img src="/barra.svg" alt="barra" />
-        <div>
-          <div style={{ margin: 0, fontWeight: 'bold' }}>Cursos em alta</div>
-          <h6 style={{ margin: 0 }}>ESCOLHA O CURSO</h6>
-        </div> */}
-      </div>
+       
+      </div> */}
 
       {/* --------------------------------------------------cards-------------------------------------------------- */}
       <Container style={{ marginTop: '30px', 
@@ -153,10 +157,7 @@ function ControlledCarousel() {
               <Card.Body>
                 <Card.Title>Eletrica</Card.Title>
                 <Card.Text style={{ height: '13', justifyContent: 'flex-start', fontWeight: '', fontStyle: 'normal', textAlign: "initial" }}>
-                  {/* <p>São Mateus</p>
-                  <p>Presencial</p>
-                  <p>60 horas</p>
-                  <p>Início em 05/05/2025</p> */}
+               
 
                 <div>Linhares</div>
                 <div>Presencial</div>

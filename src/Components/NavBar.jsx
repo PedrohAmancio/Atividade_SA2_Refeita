@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Login from './Login/Login';
-import Home from '../Pages/Home';
-import styles from './Login/styles/login.module.css';
+// import styles from './Login/Style/Login.module.css';
 import { useNavigate } from 'react-router-dom';
+import Login from "../Pages/Login";
+import Cadastro from '../pages/Cadastro';
 
 function BasicExample() {
     const navigate = useNavigate();
@@ -14,11 +14,28 @@ function BasicExample() {
     const [mostarHome, setMostrarHome] = useState(false);
     return (
         <>
-            <Navbar expand="lg" className="bg-body-primary" fixed='top' style={{ backgroundColor: '#0746B4', display: 'flex', alignItems: 'center', height: '11vh' }}>
+            <Navbar expand="lg" 
+    className="bg-body-primary" 
+    fixed="top" 
+    style={{ 
+        background: 'linear-gradient(90deg, #4B0082, #0746B4)', // Gradiente de roxo escuro para azul
+        display: 'flex', 
+        alignItems: 'center', 
+        height: '11vh' 
+    }}>
                 <Container>
                     <Navbar.Brand href="#home">
-                        <img src="./LogoSenai.svg" alt="LogoSenai" 
+                        <img 
+                        src="https://i.pinimg.com/736x/4d/28/0b/4d280bce5b1259c6946461dd67e8acf2.jpg" alt="LogoSenai" 
                         onClick={() => navigate('/')}
+                        style={{
+                         width: '150px', // Define a largura da logo
+                         height: 'auto', // Mantém a proporção da imagem
+                         display: 'block', // Garante que a imagem seja tratada como um bloco
+                         margin: '0 auto', // Centraliza a logo horizontalmente
+                         cursor: 'pointer' // Adiciona um cursor de ponteiro ao passar o mouse
+    }}
+
                         />
                     </Navbar.Brand>
                     <NavDropdown color='#FFFFFF' title="Menu" id="basic-nav-dropdown" 
@@ -40,54 +57,40 @@ function BasicExample() {
                         <Nav className="me-auto">
                             <Nav.Link href="#home">
 
-                                <div className="form-floating mb-3" style={{ width: 900, display: 'flex', alignItems: 'center' }}>
-                                    <input type="text"
-                                        className="form-control"
-                                        id="floatingInput"
-                                        style={{
-                                            position: 'relative',
-                                            top: '3vh',
-                                            height: '4vh',
-                                            width: '50vw',
-                                            padding: '1%',
-                                            backgroundColor: 'white',
-                                        }}
-                                    />
-                                </div>
-                                {/* <label htmlFor="floatingInput"
-                                    style={{
-                                        position: 'relative',
-                                        bottom: '5vh',
-                                        left: '1vw'
-                                    }}>Pesquise o nome do curso <img src="lupa.svg" alt="Buscar" />
-                                </label> */}
                             </Nav.Link>
-                            <img src="/user.svg" alt="Icone do usuário" onClick={() => setMostrarLogin(!mostrarLogin)} style={{
-                                position: 'relative',
-                                right: '6vw'
+                            <img 
+                            src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
+                             alt="Icone do usuário" 
+                              style={{
+                                 position: 'relative',
+                                 right: '-55vw',
+                                  top: '2vh', // Move a imagem um pouco para baixo
+                                 width: '50px', // Define uma largura fixa
+                                 height: '50px', // Define uma altura fixa
+                                 borderRadius: '50%', // Torna a imagem circular
+                                 cursor: 'pointer', // Adiciona um cursor de ponteiro ao passar o mouse
+                                 objectFit: 'cover' // Garante que a imagem se ajuste ao contêiner
                             }} />
-                            <p style={{
-                                position: 'relative',
-                                color: 'white',
-                                top: '5vh',
-                                right: '5.8vw',
-                                width: '9vw',
-                            }}>
-                                Olá, faça login ou cadastre-se
-                            </p>
-
-                            <Nav.Link href="#home">
-                                <label htmlFor="floatingInput">
-                                    <img src="/FavoritarCurso.svg" style={{
-                                        paddingTop: '5vh',
-                                        position: 'relative',
-                                        right: '4vw'
-                                    }} />
-                                </label>
-                            </Nav.Link>
+                            <Nav.Link href="/Login"
+                                style={{
+                                    position: 'relative',
+                                    right: '-55vw',
+                                    top: '2vh', // Move a imagem um pouco para baixo
+                                    color: '#FFFFFF',
+                                    fontSize: '15px',
+                                }} onClick={() => setMostrarLogin(!mostrarLogin)}>Login</Nav.Link>
+                            <Nav.Link href="/Cadastro"
+                                style={{
+                                    position: 'relative',
+                                    right: '-55vw',
+                                    top: '2vh', // Move a imagem um pouco para baixo
+                                    color: '#FFFFFF',
+                                    fontSize: '15px',
+                                }} onClick={() => setMostrarHome(!mostarHome)}>Cadastro</Nav.Link>
                         </Nav>
                         {mostrarLogin && <div className={styles.LayOutLogin}><Login /></div>}
-                        {mostarHome && <Home />}
+                        {mostrarLogin && <div style={{ position: 'absolute', top: '20vh', right: '10vw' }}><Login /></div>}
+                        {mostarHome && <div style={{ position: 'absolute', top: '20vh', right: '10vw' }}><Cadastro /></div>}
                     </Navbar.Collapse>
                 </Container>
             </Navbar >
