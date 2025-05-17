@@ -1,12 +1,13 @@
 import { useState } from "react"
 import Form from 'react-bootstrap/Form';
 import Lay from "../components/Lay";
-
+import './Login.css'; // Importa o CSS
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
-
+    const navigate = useNavigate(); 
 
     const verificacao  = (e) => {
         e.preventDefault();
@@ -18,9 +19,9 @@ const Login = () => {
             return;
         }
 
-        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const logins = JSON.parse(localStorage.getItem("logins")) || [];
 
-        const usuarioEncontrado = users.find((user) => user.email === email);
+        const usuarioEncontrado = logins.find((logins) => logins.email === email);
 
         if(!usuarioEncontrado) {
             setEmail("");
@@ -40,10 +41,13 @@ const Login = () => {
         
         setEmail("")
         setSenha("")
+
     }
 
     return(
-        <>
+        
+         <div className="login-bg">
+            <div className="login-box">
         <Lay/>
         <h2>Login</h2>
             <Form>
@@ -57,8 +61,12 @@ const Login = () => {
                   </Form.Group>
                  
             </Form>
-            <button onClick={verificacao}>Entrar</button>
-        </>
+             
+            <button variant="primary" style={{ width: '100%', backgroundColor: '#3840BA' }}>Entrar</button>
+
+            {verificacao.ok && navigate('/')}
+        </div>
+        </div>
     )
 }
 

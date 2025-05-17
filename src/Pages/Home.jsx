@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CardText from 'react-bootstrap/esm/CardText';
-import Footer from '../components/Footer';
+import Footer from '../Components/Footer';
 import { useNavigate } from 'react-router-dom';
 
 function ControlledCarousel() {
@@ -23,7 +23,7 @@ function ControlledCarousel() {
   return (
     <Layout>
       <div
-        style={{
+          style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -76,7 +76,7 @@ function ControlledCarousel() {
               src="https://www.senaipr.org.br/mundosenai/uploadAddress/Senai-Mundo-Senai-2024-Banner-Desktop-768x630[110573].png"
               alt="Imagem para melhorar a outra imagem"
                 style={{
-        width: '80px', // Define a largura da logo
+        width: '80000px', // Define a largura da logo
         height: 'auto', // Mantém a proporção da imagem
         display: 'block', // Garante que a imagem seja tratada como um bloco
         margin: '0 auto', // Centraliza a logo horizontalmente
@@ -86,19 +86,6 @@ function ControlledCarousel() {
           </Carousel.Item>
         </Carousel>
       </div>
-
-      {/* <div
-        style={{
-          position: 'relative',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '10px',
-          marginTop: '2rem',
-          padding: '20px',
-        }}
-      >
-       
-      </div> */}
 
       {/* --------------------------------------------------cards-------------------------------------------------- */}
       <Container style={{ marginTop: '30px', 
@@ -127,7 +114,6 @@ function ControlledCarousel() {
                 <div>1200 horas</div>
                 <div>Sem data prevista</div>
     
-
                   <CardText style={{ color: 'blue', textJustify: 'revert-layer' }}>
                     <div style={{
                       fontSize: "20px", fontWeight: "bold",

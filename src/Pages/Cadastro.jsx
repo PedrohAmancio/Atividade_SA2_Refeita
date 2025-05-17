@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import Lay from '../components/Lay';
+import './Login.css'; // Importa o CSS
 
 const Cadastro = () => {
     const [senha, setSenha] = useState("");
@@ -11,7 +14,7 @@ const Cadastro = () => {
         return regex.test(email);
     };
 
-    const cadastro = () => {
+    const Cadastros = () => {
         const users = JSON.parse(localStorage.getItem("users")) || [];
 
         const usuarioExistente = users.find((user) => user.email === email);
@@ -78,9 +81,11 @@ const Cadastro = () => {
     } 
 
   return (
-    <>
+     <div className="login-bg">
+            <div className="login-box">
         <h2>Cadastro</h2>
        
+       <Lay/>
             <Form>
                   <Form.Group className="mb-3" controlId="formGroupEmail">
                              <Form.Label>Email</Form.Label>
@@ -94,12 +99,13 @@ const Cadastro = () => {
                             <Form.Label>Confirmar Senha</Form.Label>
                             <Form.Control type="password" placeholder='Confirmar Senha' value={confirmarSenha} onChange={(e) => setConfir(e.target.value)}/>
                   </Form.Group>
-                 
+                  
             </Form>
-        <button onClick={verificacao}>Entrar</button>
-        <button onClick={cadastro}>Cadastrar</button>
-    </>
-  )
+            <button variant="primary" style={{ width: '100%', backgroundColor: '#3840BA' }} onClick={Cadastros} onClickCapture={() => navigate('/Mecanica')}>Entrar</button>
+    </div>
+    </div>
+
+        )
 }
 
 export default Cadastro
